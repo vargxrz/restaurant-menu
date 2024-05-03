@@ -119,6 +119,9 @@ function removeItemCart(name) {
     }
 }
 
+function getAddress() {
+    return addressInput.value;
+}
 addressInput.addEventListener("input", (event) => {
     let inputValue = event.target.value;
     if (inputValue !== "") {
@@ -129,27 +132,34 @@ addressInput.addEventListener("input", (event) => {
 
 function sendOrder() {
     const isOpen = checkRestaurantOpen();
+    const address = getAddress();
+    
     if (cart.length === 0) return;
 
     if (isOpen) {
-        if (addressInput.value === "") {
+        if (address !== "") {
+            // Format cart items for WhatsApp message
+            const cartItems = cart.map((item) => {
+                return `${item.name} & Quantidade ( ${item.quantity} )`;
+            }).join("\n");
+
+            // Calculate total price
+            const totalPrice = cart.reduce((acc, item) => {
+                return acc + (item.price * item.quantity);
+            }, 0);
+
+            // Format the final WhatsApp message
+            const message = encodeURIComponent(`${cartItems}\nLocal: ${address}\nPreço Total: R$ ${totalPrice.toFixed(2)}`);
+
+            // Define your WhatsApp phone number
+            const phone = "47988095244";
+
+            // Open WhatsApp with the message
+            window.open(`https://wa.me/${phone}?text=${message}`, "blank");
+        } else {
             addressWarn.classList.remove("hidden");
-            addressInput.classList.add("border-red-500")
+            addressInput.classList.add("border-red-500");
         }
-
-        const cartItems = cart.map((item) => {
-            return `${item.name} || Quantidade: ${item.quantity}`;
-        }).join("\n");
-
-        const totalPrice = cart.reduce((acc, item) => {
-            return acc + (item.price * item.quantity);
-        }, 0);
-
-        const message = encodeURIComponent(`${cartItems}\nEndereço: ${addressInput.value} Total a ser pago: R$ ${totalPrice.toFixed(2)}`);
-
-        const phone = "47988095244";
-
-        window.open(`https://wa.me/${phone}?text=${message}`, "blank");
     } else {
         Toastify({
             text: "Ops o restaurante está fechado!",
@@ -162,8 +172,6 @@ function sendOrder() {
                 background: "#ef4444",
             },
         }).showToast();
-        
-        return;
     }
 }
 
