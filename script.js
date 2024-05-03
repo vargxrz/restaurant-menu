@@ -7,7 +7,7 @@ const checkoutBtn = document.getElementById("checkout-btn");
 const closeModalBtn = document.getElementById("close-modal-btn");
 const cartCounter = document.getElementById("cart-count");
 const addressInput = document.getElementById("address");
-const addresWarn = document.getElementById("addres-warn");
+const addressWarn = document.getElementById("address-warn");
 
 let cart = [];
 
@@ -19,7 +19,7 @@ cartBtn.addEventListener("click", () => {
 })
 
 cartModal.addEventListener("click", (event) => {
-    if(event.target === cartModal) {
+    if (event.target === cartModal) {
         cartModal.style.display = "none";
     }
 })
@@ -43,29 +43,30 @@ menu.addEventListener("click", (event) => {
 function addToCart(name, price) {
     const existingItem = cart.find(item => item.name === name)
 
-    if(existingItem) {
-       existingItem.quantity += 1
-       
+    if (existingItem) {
+        existingItem.quantity += 1
+
     } else {
         cart.push({
-        name,
-        price,
-        quantity: 1
-    })}
+            name,
+            price,
+            quantity: 1
+        })
+    }
     updateCartModel()
 }
 
-function updateCartModel(){
+function updateCartModel() {
     cartItemsContainer.innerHTML = "";
     let total = 0;
 
 
     cart.forEach(item => {
-    const cartItemElement = document.createElement("div");
-    cartItemElement.classList.add("flex", "justify-between", "mb-4", "flex-col");
+        const cartItemElement = document.createElement("div");
+        cartItemElement.classList.add("flex", "justify-between", "mb-4", "flex-col");
 
-     cartItemElement.innerHTML = 
-     `
+        cartItemElement.innerHTML =
+            `
      <div class="flex items-center justify-between">
          <div>
             <p class="font-medium">${item.name}</p>
@@ -80,11 +81,11 @@ function updateCartModel(){
      </div>  
      `;
 
-     total += item.price * item.quantity;
+        total += item.price * item.quantity;
 
-     cartItemsContainer.appendChild(cartItemElement);
+        cartItemsContainer.appendChild(cartItemElement);
     })
-    
+
     cartTotal.textContent = total.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL"
@@ -94,10 +95,10 @@ function updateCartModel(){
 }
 
 
-cartItemsContainer.addEventListener("click", function(event) {
-    if(event.target.classList.contains("remove-from-cart-btn")) {
+cartItemsContainer.addEventListener("click", function (event) {
+    if (event.target.classList.contains("remove-from-cart-btn")) {
         const name = event.target.getAttribute("data-name");
-   
+
         removeItemCart(name);
     }
 })
@@ -105,10 +106,10 @@ cartItemsContainer.addEventListener("click", function(event) {
 function removeItemCart(name) {
     const index = cart.findIndex(item => item.name === name);
 
-    if(index !== -1){
+    if (index !== -1) {
         const item = cart[index];
 
-        if(item.quantity > 1) {
+        if (item.quantity > 1) {
             item.quantity -= 1;
             updateCartModel();
             return;
@@ -117,3 +118,54 @@ function removeItemCart(name) {
         updateCartModel();
     }
 }
+
+addressInput.addEventListener("input", (event) => {
+    let inputValue = event.target.value;
+    if (inputValue !== "") {
+        addressInput.classList.remove("border-red-500")
+        addressWarn.classList.add("hidden");
+    }
+});
+
+checkoutBtn.addEventListener("click", () => {
+    // const isOpen = checkRestaurantOpen();
+    // if (!isOpen) {
+    //     alert("Restaurante fechado no momento!")
+    //     return;
+    // }
+    if (cart.length === 0) return;
+    if (addressInput.value === "") {
+        addressWarn.classList.remove("hidden");
+        addressInput.classList.add("border-red-500")
+    }
+
+    const cartItems = cart.map((item) => {
+        return (
+            `|${item.name} Quantidade: ${item.quantity} Preço: ${item.price} |`
+        )
+    }).join("")
+    
+    const message = encodeURIComponent(cartItems)
+    const phone = "47988095244"
+
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "blank")
+});
+
+
+function checkRestaurantOpen() {
+    const data = new Date();
+    const hora = data.getHours();
+    return hora >= 18 && hora <= 22;
+}
+
+const spanItem = document.getElementById('date-span');
+const isOpen = checkRestaurantOpen();
+
+if (isOpen) {
+    spanItem.classList.add('bg-green-600');
+    spanItem.classList.remove('bg-red-500');
+} else {
+    spanItem.classList.add('bg-red-500');
+    spanItem.classList.remove('bg-green-600');
+}
+
