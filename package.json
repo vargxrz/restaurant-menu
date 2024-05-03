@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tail": "npx tailwindcss -i ./styles/style.css -o ./styles/output.css --watch"
+    "dev": "npx tailwindcss -i ./styles/style.css -o ./styles/output.css --watch", 
+    "db": "json-server db.json -p 3030"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.4.3"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.23"
   }
 }

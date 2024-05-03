@@ -1,0 +1,46 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Smash Burguer",
+            "description": "Produto desc",
+            "price": "10",
+            "image": "/assets/hamb-1.png"
+        },
+        {
+            "id": 2,
+            "name": "Burguer Salada",
+            "description": "Produto desc2",
+            "price": "102",
+            "image": "/assets/hamb-2.png"
+        },
+        {
+            "id": 3,
+            "name": "Burguer Cheddar",
+            "description": "Produto desc2",
+            "price": "102",
+            "image": "/assets/hamb-2.png"
+        } ,
+        {
+            "id": 4,
+            "name": "Burguer Gorgonzola",
+            "description": "Produto desc2",
+            "price": "102",
+            "image": "/assets/hamb-2.png"
+        },
+         {
+            "id": 5,
+            "name": "Burguer Kids",
+            "description": "Produto desc2",
+            "price": "102",
+            "image": "/assets/hamb-2.png"
+        } ,
+        {
+            "id": 6,
+            "name": "Burguer Costela",
+            "description": "Produto desc2",
+            "price": "102",
+            "image": "/assets/hamb-2.png"
+        }
+    ]
+}
