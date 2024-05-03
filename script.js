@@ -127,35 +127,50 @@ addressInput.addEventListener("input", (event) => {
     }
 });
 
-checkoutBtn.addEventListener("click", () => {
-    // const isOpen = checkRestaurantOpen();
-    // if (!isOpen) {
-    //     alert("Restaurante fechado no momento!")
-    //     return;
-    // }
+function sendOrder() {
+    const isOpen = checkRestaurantOpen();
     if (cart.length === 0) return;
-    if (addressInput.value === "") {
-        addressWarn.classList.remove("hidden");
-        addressInput.classList.add("border-red-500")
+
+    if (isOpen) {
+        if (addressInput.value === "") {
+            addressWarn.classList.remove("hidden");
+            addressInput.classList.add("border-red-500")
+        }
+
+        const cartItems = cart.map((item) => {
+            return `${item.name} || Quantidade: ${item.quantity}`;
+        }).join("\n");
+
+        const totalPrice = cart.reduce((acc, item) => {
+            return acc + (item.price * item.quantity);
+        }, 0);
+
+        const message = encodeURIComponent(`${cartItems}\nEndereço: ${addressInput.value} Total a ser pago: R$ ${totalPrice.toFixed(2)}`);
+
+        const phone = "47988095244";
+
+        window.open(`https://wa.me/${phone}?text=${message}`, "blank");
+    } else {
+        Toastify({
+            text: "Ops o restaurante está fechado!",
+            duration: 3000,
+            close: true,
+            gravity: "top", 
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+                background: "#ef4444",
+            },
+        }).showToast();
+        
+        return;
     }
-
-    const cartItems = cart.map((item) => {
-        return (
-            `|${item.name} Quantidade: ${item.quantity} Preço: ${item.price} |`
-        )
-    }).join("")
-    
-    const message = encodeURIComponent(cartItems)
-    const phone = "47988095244"
-
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "blank")
-});
-
+}
 
 function checkRestaurantOpen() {
     const data = new Date();
     const hora = data.getHours();
-    return hora >= 18 && hora <= 22;
+    return hora >= 12 && hora <= 22;
 }
 
 const spanItem = document.getElementById('date-span');
