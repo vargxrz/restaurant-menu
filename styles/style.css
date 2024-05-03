@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+* {
+  touch-action: manipulation;
+}
 
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {

@@ -2710,6 +2710,10 @@ video {
   forced-color-adjust: none;
 }
 
+* {
+  touch-action: manipulation;
+}
+
 /* Chrome, Edge and Safari */
 
 *::-webkit-scrollbar {
