@@ -151,27 +151,22 @@ function sendOrder() {
 
     if (isOpen) {
         if (address !== "") {
-            // Format cart items for WhatsApp message
             const cartItems = cart.map((item) => {
                 return `${item.quantity}x ${item.name}`;
             }).join("\n");
 
-            // Calculate total price
             const totalPrice = cart.reduce((acc, item) => {
                 return acc + (item.price * item.quantity);
             }, 0);
 
-            // Format the final WhatsApp message
             const message = encodeURIComponent(`${cartItems}
 
 Local: ${address}\nPreço Total: R$ ${totalPrice.toFixed(2)}
 `);
 
-            // Define your WhatsApp phone number
             const phone = "47988095244";
 
-            // Open WhatsApp with the message
-            window.open(`https://wa.me/${phone}?text=${message}`, "blank");
+            window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
         } else {
             addressWarn.classList.remove("hidden");
             addressInput.classList.add("border-red-500");
