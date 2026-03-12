@@ -17,142 +17,136 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
     <title>Moveio</title>
 </head>
 
 <body>
 
-    <header class="w-full h-[420px] bg-charcoal bg-cover bg-center flex justify-center items-center relative">
-        <div>
-            <div class="w-full h-full flex flex-col justify-center items-center relative z-10">
+    <header class="w-full bg-white flex justify-center items-center py-12">
+        <div class="text-center">
+            <div class="w-full flex flex-col justify-center items-center">
 
                 <img src="assets/logomoveio.png" alt="Logo MoveioBurguer"
-                    class="w-32 h-32 rounded-full shadow-lg duration-200" />
+                    class="w-20 h-20 rounded-full mb-4" />
 
-                <h1 class="text-5xl md:text-6xl mt-4 mb-2 font-display font-bold text-white uppercase">Moveio Burguer</h1>
+                <h1 class="text-2xl font-bold text-gray-900 mb-2">Moveio Burguer</h1>
 
-                <span class="text-white font-medium text-center text-sm md:text-base">Pedro Nicolau Isensee, Coloninha, Gaspar - SC</span>
+                <span class="text-sm text-gray-600 mb-3">Pedro Nicolau Isensee, Coloninha, Gaspar - SC</span>
 
-                <div class="bg-fresh-green px-5 py-2 rounded-lg mt-5 font-bold uppercase tracking-wide" id="date-span">
-                    <span class="text-charcoal font-bold">Qua á Seg - 18:00 as 23:00</span>
+                <div class="bg-green px-4 py-1.5 rounded-lg text-sm font-semibold" id="date-span">
+                    <span class="text-white">Qua á Seg - 18:00 as 23:00</span>
                 </div>
 
             </div>
+        </div>
     </header>   
 
-    <h2 class="text-3xl md:text-5xl font-display font-bold text-white text-center mt-9 mb-6 uppercase tracking-wide">
-        Conheca nosso menu
+    <h2 class="text-3xl font-bold text-gray-900 text-center mt-12 mb-8">
+        Conheça nosso menu
     </h2>
 
     <div id="menu">
-        <main id="container" class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
-            <div class="flex gap-3 product-card">
+        <main id="container" class="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto max-w-6xl px-4 mb-24">
+            <div class="flex gap-4 product-card">
                 <img src="assets/burguer1.png" alt="Hamburguer Smash"
-                    class="w-28 h-28 rounded-md duration-300" />
+                    class="w-24 h-24 object-cover" />
                 <div class="flex-1">
-                    <p class="font-display text-xl text-white uppercase tracking-wide">Hamburguer Smash</p>
-                    <p class="text-sm text-gray-300">Pao Levinho de fermentacao natural da trigou, burguer 160g, queijo prato e
-                        maionese da casa.</p>
+                    <p class="text-lg font-semibold text-gray-900">Hamburguer Smash</p>
+                    <p class="text-sm text-gray-600 mt-1">Pão artesanal, burger 160g, queijo, maionese</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-xl text-flame-orange">R$ 18.90</p>
-                        <button class="bg-gray-900 px-5 py-2 rounded add-to-cart-btn" data-name="Hamburguer Smash"
+                        <p class="text-xl font-bold text-red">R$ 18,90</p>
+                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Hamburguer Smash"
                             data-price="18.90">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                            <i class="fa fa-cart-plus"></i>
                         </button>
                     </div>
                 </div>
-
             </div>
-            <div class="flex gap-3 product-card">
+
+            <div class="flex gap-4 product-card">
                 <img src="assets/burguer2.png" alt="Hamburguer Duplo"
-                    class="w-28 h-28 rounded-md duration-300" />
+                    class="w-24 h-24 object-cover" />
                 <div class="flex-1">
-                    <p class="font-display text-xl text-white uppercase tracking-wide">Hamburguer Duplo</p>
-                    <p class="text-sm text-gray-300">Pao Levinho de fermentacao natural da trigou, burguer 160g, queijo prato e
-                        maionese da casa.</p>
+                    <p class="text-lg font-semibold text-gray-900">Hamburguer Duplo</p>
+                    <p class="text-sm text-gray-600 mt-1">Pão artesanal, 2x burger 160g, queijo duplo</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-xl text-flame-orange">R$ 32.90</p>
-                        <button class="bg-gray-900 px-5 py-2 rounded add-to-cart-btn" data-name="Hamburguer Duplo"
+                        <p class="text-xl font-bold text-red">R$ 32,90</p>
+                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Hamburguer Duplo"
                             data-price="32.90">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                            <i class="fa fa-cart-plus"></i>
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="flex gap-3 product-card">
+
+            <div class="flex gap-4 product-card">
                 <img src="assets/burguer3.png" alt="Hamburguer Salada"
-                    class="w-28 h-28 rounded-md duration-300" />
+                    class="w-24 h-24 object-cover" />
                 <div class="flex-1">
-                    <p class="font-display text-xl text-white uppercase tracking-wide">Hamburguer Salada</p>
-                    <p class="text-sm text-gray-300">Pao Levinho de fermentacao natural da trigou, burguer 160g, queijo prato e
-                        maionese da casa.</p>
-
+                    <p class="text-lg font-semibold text-gray-900">Hamburguer Salada</p>
+                    <p class="text-sm text-gray-600 mt-1">Burger 160g, queijo, alface, tomate fresco</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-xl text-flame-orange">R$ 35.90</p>
-                        <button class="bg-gray-900 px-5 py-2 rounded add-to-cart-btn" data-name="Hamburguer Salada"
+                        <p class="text-xl font-bold text-red">R$ 35,90</p>
+                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Hamburguer Salada"
                             data-price="35.90">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                            <i class="fa fa-cart-plus"></i>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="flex gap-3 product-card">
+            <div class="flex gap-4 product-card">
                 <img src="assets/burguer5.png" alt="Hamburguer da Casa"
-                    class="w-28 h-28 rounded-md duration-300" />
+                    class="w-24 h-24 object-cover" />
                 <div class="flex-1">
-                    <p class="font-display text-xl text-white uppercase tracking-wide">Hamburguer da Casa</p>
-                    <p class="text-sm text-gray-300">Pao Levinho de fermentacao natural da trigou, burguer 160g, queijo prato e
-                        maionese da casa.</p>
-
+                    <p class="text-lg font-semibold text-gray-900">Hamburguer da Casa</p>
+                    <p class="text-sm text-gray-600 mt-1">Receita especial, 160g, bacon, cebola caramelizada</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-xl text-flame-orange">R$ 30.00</p>
-                        <button class="bg-gray-900 px-5 py-2 rounded add-to-cart-btn" data-name="Hamburguer da Casa"
+                        <p class="text-xl font-bold text-red">R$ 30,00</p>
+                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Hamburguer da Casa"
                             data-price="30.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                            <i class="fa fa-cart-plus"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </main>
 
-        <div class="mx-auto max-w-7xl px-2 my-8">
-            <h2 class="font-display text-4xl md:text-5xl text-white uppercase tracking-wide">
+        <div class="mx-auto max-w-6xl px-4 mb-6">
+            <h2 class="text-2xl font-bold text-gray-900">
                 Bebidas
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto max-w-6xl px-4 mb-24">
 
-            <div class="flex gap-3 w-full product-card">
+            <div class="flex gap-4 product-card">
                 <img src="assets/refri-1.png" alt="Coca lata"
-                    class="w-28 h-28 rounded-md duration-300" />
-                <div class="w-full flex-1">
-                    <p class="font-display text-xl text-white uppercase tracking-wide">Cola lata</p>
-
+                    class="w-24 h-24 object-cover" />
+                <div class="flex-1">
+                    <p class="text-lg font-semibold text-gray-900">Cola lata</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-xl text-flame-orange">R$ 6.00</p>
-                        <button class="bg-gray-900 px-5 py-2 rounded add-to-cart-btn" data-name="Coca lata"
+                        <p class="text-xl font-bold text-red">R$ 6,00</p>
+                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Coca lata"
                             data-price="6.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                            <i class="fa fa-cart-plus"></i>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="flex gap-3 product-card">
+            <div class="flex gap-4 product-card">
                 <img src="assets/refri-2.png" alt="Guarana lata"
-                    class="w-28 h-28 rounded-md duration-300" />
-                <div class="w-full flex-1">
-                    <p class="font-display text-xl text-white uppercase tracking-wide">Guarana lata</p>
-
+                    class="w-24 h-24 object-cover" />
+                <div class="flex-1">
+                    <p class="text-lg font-semibold text-gray-900">Guarana lata</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-xl text-flame-orange">R$ 6.00</p>
-                        <button class="bg-gray-900 px-5 py-2 rounded add-to-cart-btn" data-name="Guarana lata"
+                        <p class="text-xl font-bold text-red">R$ 6,00</p>
+                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Guarana lata"
                             data-price="6.00">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                            <i class="fa fa-cart-plus"></i>
                         </button>
                     </div>
                 </div>
@@ -160,39 +154,40 @@
         </div>
     </div>
 
-    <div class="bg-black/80 w-full h-full fixed top-0 left-0 z-[99] flex items-center justify-center hidden" id="cart-modal">
+    <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] flex items-center justify-center hidden" id="cart-modal">
      
-        <div class="bg-white p-6 rounded-lg min-w-[90%] md:min-w-[600px] max-h-[85vh] overflow-y-auto">
-            <h2 class="text-center font-display text-4xl mb-4 text-charcoal uppercase tracking-wide">Meu carrinho</h2>
+        <div class="bg-white p-6 rounded-2xl min-w-[90%] md:min-w-[600px] max-w-2xl max-h-[85vh] overflow-y-auto">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Meu carrinho</h2>
 
-                <div id="cart-items" class="flex justify-between mb-4 flex-col"></div>
-                <div class="bg-charcoal text-white p-4 rounded-lg mb-4">
-                    <p class="font-display text-2xl uppercase tracking-wide">Total: <span id="cart-total" class="text-flame-orange">0.00</span></p>
+                <div id="cart-items" class="mb-6"></div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                    <p class="text-lg font-semibold text-gray-900">Total: <span id="cart-total" class="text-red">R$ 0,00</span></p>
                 </div>
 
-                <p class="font-bold text-charcoal mb-2">Endereço de entrega: </p>
+                <label class="block text-sm font-semibold text-gray-900 mb-2">Endereço de entrega</label>
                 <input type="text" 
                 placeholder="Digite seu endereço completo..."
                 id="address"
-                class="w-full border-2 border-gray-300 p-3 rounded-lg my-2 focus:outline-none focus:border-flame-red transition-all">
-                <p class="text-flame-red font-bold hidden mt-1" id="address-warn">O endereço não pode ser vázio!</p>
+                class="w-full border-2 border-gray-200 p-3 rounded-lg mb-2 text-gray-900">
+                <p class="text-red text-sm font-semibold hidden mb-4" id="address-warn">O endereço não pode ser vazio!</p>
       
-                <div class="flex items-center justify-between mt-6 w-full gap-4">
-                    <button id="close-modal-btn" class="flex-1 md:flex-initial">Fechar</button>
-                    <button id="checkout-btn" onclick="sendOrder()" class="bg-green-500 text-white px-6 py-3 rounded-lg flex-1 md:flex-initial">Finalizar Pedido</button>
+                <div class="flex items-center justify-between gap-4">
+                    <button id="close-modal-btn" class="flex-1 px-6 py-3 border-2 border-gray-200 rounded-lg font-semibold text-gray-900">Fechar</button>
+                    <button id="checkout-btn" onclick="sendOrder()" class="flex-1 bg-green text-white px-6 py-3 rounded-lg font-semibold">Finalizar Pedido</button>
                 </div>
             
             </div>
     </div>
 
-    <footer class="w-full bg-red-500 py-4 fixed bottom-0 z-40 flex items-center justify-center">
+    <footer class="w-full bg-red py-4 fixed bottom-0 z-40 flex items-center justify-center">
         <button
-        class="flex items-center gap-3 text-white font-display text-lg md:text-xl uppercase tracking-wider"
+        class="flex items-center gap-3 text-white font-semibold"
         id="cart-btn"
         >
-        <span id="cart-count">0</span>
+        <span id="cart-count" class="text-red">0</span>
         Veja meu carrinho
-            <i class="fa fa-cart-plus text-xl text-white"></i>
+            <i class="fa fa-cart-plus text-lg"></i>
         </button>
     </footer>
 

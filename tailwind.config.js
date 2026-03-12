@@ -3,37 +3,31 @@ module.exports = {
   content: ["./**/*{html,js}"],
   theme: {
     fontFamily: {
-      'display': ['Bebas Neue', 'Impact', 'sans-serif'],
-      'sans': ['Barlow', 'sans-serif']
+      'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif']
     },
     extend: {
       colors: {
-        'charcoal': {
-          DEFAULT: '#1a1a1a',
-          light: '#2a2a2a',
-          dark: '#0f0f0f',
+        'gray': {
+          50: '#F9FAFB',
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          600: '#6B7280',
+          900: '#1F2937',
         },
-        'flame': {
-          red: '#ff3838',
-          'red-dark': '#e62828',
-          orange: '#ffb638',
+        'red': {
+          DEFAULT: '#EF4444',
+          600: '#DC2626',
         },
-        'fresh': {
-          green: '#00d084',
-        },
-        'concrete': '#3a3a3a',
+        'green': {
+          DEFAULT: '#10B981',
+          600: '#059669',
+        }
       },
       backgroundImage: {
-        "home": "url('/assets/bg.png')",
-        "urban-gradient": "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)",
+        "home": "url('/assets/bg.png')"
       },
-      boxShadow: {
-        'red-glow': '0 0 20px rgba(255, 56, 56, 0.4)',
-        'green-glow': '0 0 20px rgba(0, 208, 132, 0.4)',
-        'urban': '0 8px 32px rgba(0, 0, 0, 0.5)',
-      }
     },
   },
   plugins: [],
 }
-

@@ -62,13 +62,11 @@ function addToCart(name, price) {
         gravity: "top",
         position: "center",
         stopOnFocus: true,
-        className: "success",
         style: {
-          background: "linear-gradient(135deg, #00d084 0%, #00b870 100%)",
-          borderRadius: "12px",
+          background: "#10B981",
+          borderRadius: "8px",
           fontWeight: "600",
-          padding: "16px 24px",
-          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5)",
+          padding: "12px 20px",
         },
       }).showToast();
 }
@@ -86,12 +84,12 @@ function updateCartModel() {
             `
      <div class="flex items-center justify-between">
          <div>
-            <p class="font-bold text-charcoal">${item.name}</p>
-            <p class="text-sm text-gray-600">Qtd: ${item.quantity}</p>
-            <p class="font-bold mt-1 text-flame-orange">R$ ${item.price.toFixed(2)}</p>
+            <p class="font-semibold text-gray-900">${item.name}</p>
+            <p class="text-sm text-gray-600 mt-1">Qtd: ${item.quantity}</p>
+            <p class="font-bold mt-1 text-red">R$ ${item.price.toFixed(2)}</p>
          </div> 
          <div>
-            <button class="remove-from-cart-btn bg-flame-red text-white px-4 py-2 rounded-lg font-bold hover:bg-flame-red-dark transition-all" data-name="${item.name}">
+            <button class="remove-from-cart-btn bg-red text-white px-4 py-2 rounded-lg font-semibold text-sm" data-name="${item.name}">
                 Remover
             </button>
          </div>
@@ -142,7 +140,7 @@ function getAddress() {
 addressInput.addEventListener("input", (event) => {
     let inputValue = event.target.value;
     if (inputValue !== "") {
-        addressInput.classList.remove("border-flame-red")
+        addressInput.classList.remove("border-red")
         addressWarn.classList.add("hidden");
     }
 });
@@ -173,11 +171,7 @@ Local: ${address}\nPreço Total: R$ ${totalPrice.toFixed(2)}
             window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
         } else {
             addressWarn.classList.remove("hidden");
-            addressInput.classList.add("border-flame-red");
-            addressInput.classList.add("address-warn-shake");
-            setTimeout(() => {
-                addressInput.classList.remove("address-warn-shake");
-            }, 300);
+            addressInput.classList.add("border-red");
         }
     } else {
         Toastify({
@@ -187,13 +181,11 @@ Local: ${address}\nPreço Total: R$ ${totalPrice.toFixed(2)}
             gravity: "top", 
             position: "right", 
             stopOnFocus: true,
-            className: "error",
             style: {
-                background: "linear-gradient(135deg, #ff3838 0%, #e62828 100%)",
-                borderRadius: "12px",
+                background: "#EF4444",
+                borderRadius: "8px",
                 fontWeight: "600",
-                padding: "16px 24px",
-                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5)",
+                padding: "12px 20px",
             },
         }).showToast();
     }
@@ -209,10 +201,10 @@ const spanItem = document.getElementById('date-span');
 const isOpen = checkRestaurantOpen();
 
 if (isOpen) {
-    spanItem.classList.add('bg-fresh-green');
-    spanItem.classList.remove('bg-flame-red');
+    spanItem.classList.add('bg-green');
+    spanItem.classList.remove('bg-red');
 } else {
-    spanItem.classList.add('bg-flame-red');
-    spanItem.classList.remove('bg-fresh-green');
+    spanItem.classList.add('bg-red');
+    spanItem.classList.remove('bg-green');
 }
 
