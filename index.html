@@ -1,198 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moveio Burguer — Smash burgers artesanais em Gaspar, SC. Peça pelo WhatsApp.">
+    <title>Moveio Burguer — Cardápio</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
 
-        <link rel="stylesheet" href="styles/output.css">
+    <!-- Fonts: Cormorant Garamond (display) + Outfit (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <title>Moveio</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
 
-    <header class="w-full bg-white flex justify-center items-center py-12">
-        <div class="text-center">
-            <div class="w-full flex flex-col justify-center items-center">
-
-                <img src="assets/logomoveio.png" alt="Logo MoveioBurguer"
-                    class="w-20 h-20 rounded-full mb-4" />
-
-                <h1 class="text-2xl font-bold text-gray-900 mb-2">Moveio Burguer</h1>
-
-                <span class="text-sm text-gray-600 mb-3">Pedro Nicolau Isensee, Coloninha, Gaspar - SC</span>
-
-                <div class="bg-green px-4 py-1.5 rounded-lg text-sm font-semibold" id="date-span">
-                    <span class="text-white">Qua á Seg - 18:00 as 23:00</span>
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a class="header-brand" href="#hero" aria-label="Moveio Burguer">
+                <div class="header-info">
+                    <span class="header-name">Moveio Burguer</span>
+                    <span class="header-loc">Coloninha · Gaspar, SC</span>
                 </div>
-
+            </a>
+            <div class="header-status" id="status-badge">
+                <span class="status-dot" id="status-dot"></span>
+                <span id="status-label">--</span>
             </div>
         </div>
-    </header>   
+    </header>
 
-    <h2 class="text-3xl font-bold text-gray-900 text-center mt-12 mb-8">
-        Conheça nosso menu
-    </h2>
-
-    <div id="menu">
-        <main id="container" class="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto max-w-6xl px-4 mb-24">
-            <div class="flex gap-4 product-card">
-                <img src="assets/burguer1.png" alt="Hamburguer Smash"
-                    class="w-24 h-24 object-cover" />
-                <div class="flex-1">
-                    <p class="text-lg font-semibold text-gray-900">Hamburguer Smash</p>
-                    <p class="text-sm text-gray-600 mt-1">Pão artesanal, burger 160g, queijo, maionese</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="text-xl font-bold text-red">R$ 18,90</p>
-                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Hamburguer Smash"
-                            data-price="18.90">
-                            <i class="fa fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex gap-4 product-card">
-                <img src="assets/burguer2.png" alt="Hamburguer Duplo"
-                    class="w-24 h-24 object-cover" />
-                <div class="flex-1">
-                    <p class="text-lg font-semibold text-gray-900">Hamburguer Duplo</p>
-                    <p class="text-sm text-gray-600 mt-1">Pão artesanal, 2x burger 160g, queijo duplo</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="text-xl font-bold text-red">R$ 32,90</p>
-                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Hamburguer Duplo"
-                            data-price="32.90">
-                            <i class="fa fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex gap-4 product-card">
-                <img src="assets/burguer3.png" alt="Hamburguer Salada"
-                    class="w-24 h-24 object-cover" />
-                <div class="flex-1">
-                    <p class="text-lg font-semibold text-gray-900">Hamburguer Salada</p>
-                    <p class="text-sm text-gray-600 mt-1">Burger 160g, queijo, alface, tomate fresco</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="text-xl font-bold text-red">R$ 35,90</p>
-                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Hamburguer Salada"
-                            data-price="35.90">
-                            <i class="fa fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex gap-4 product-card">
-                <img src="assets/burguer5.png" alt="Hamburguer da Casa"
-                    class="w-24 h-24 object-cover" />
-                <div class="flex-1">
-                    <p class="text-lg font-semibold text-gray-900">Hamburguer da Casa</p>
-                    <p class="text-sm text-gray-600 mt-1">Receita especial, 160g, bacon, cebola caramelizada</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="text-xl font-bold text-red">R$ 30,00</p>
-                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Hamburguer da Casa"
-                            data-price="30.00">
-                            <i class="fa fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <div class="mx-auto max-w-6xl px-4 mb-6">
-            <h2 class="text-2xl font-bold text-gray-900">
-                Bebidas
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-css" aria-hidden="true"></div>
+        <div class="hero-content">
+            <p class="hero-tag">Gaspar · SC</p>
+            <h2 class="hero-title">
+                Sabor<br>
+                que <em>marca.</em>
             </h2>
+            <p class="hero-lead">Smash burgers artesanais com ingredientes frescos, feitos com cuidado em Gaspar, SC.</p>
+            <a href="#cardapio" class="btn-hero">
+                Ver cardápio
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
+        <div class="hero-line" aria-hidden="true"></div>
+    </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto max-w-6xl px-4 mb-24">
+    <!-- CATEGORY NAV -->
+    <nav class="cat-nav" id="cat-nav" aria-label="Seções do cardápio">
+        <div class="cat-nav-wrap">
+            <button class="cat-btn active" data-target="section-burgers">Hambúrgueres</button>
+            <button class="cat-btn" data-target="section-bebidas">Bebidas</button>
+            <button class="cat-btn" data-target="section-sobremesas">Sobremesas</button>
+        </div>
+    </nav>
 
-            <div class="flex gap-4 product-card">
-                <img src="assets/refri-1.png" alt="Coca lata"
-                    class="w-24 h-24 object-cover" />
-                <div class="flex-1">
-                    <p class="text-lg font-semibold text-gray-900">Cola lata</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="text-xl font-bold text-red">R$ 6,00</p>
-                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Coca lata"
-                            data-price="6.00">
-                            <i class="fa fa-cart-plus"></i>
-                        </button>
-                    </div>
+    <!-- MAIN MENU -->
+    <main id="cardapio">
+
+        <!-- BURGERS -->
+        <section class="menu-section" id="section-burgers" data-section="burgers">
+            <div class="page-wrap">
+                <div class="section-hd">
+                    <h2 class="section-title">Hambúrgueres</h2>
+                    <p class="section-desc">Pão artesanal · Burger 160g · Ingredientes premium</p>
                 </div>
+                <div class="grid" id="grid-burgers"></div>
             </div>
+        </section>
 
-            <div class="flex gap-4 product-card">
-                <img src="assets/refri-2.png" alt="Guarana lata"
-                    class="w-24 h-24 object-cover" />
-                <div class="flex-1">
-                    <p class="text-lg font-semibold text-gray-900">Guarana lata</p>
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="text-xl font-bold text-red">R$ 6,00</p>
-                        <button class="bg-red px-5 py-2 rounded-lg text-white font-medium add-to-cart-btn" data-name="Guarana lata"
-                            data-price="6.00">
-                            <i class="fa fa-cart-plus"></i>
-                        </button>
-                    </div>
+        <!-- DRINKS -->
+        <section class="menu-section" id="section-bebidas" data-section="bebidas">
+            <div class="page-wrap">
+                <div class="section-hd">
+                    <h2 class="section-title">Bebidas</h2>
+                    <p class="section-desc">Refrigerantes · Sucos · Milkshakes · Cervejas geladas</p>
                 </div>
+                <div class="grid" id="grid-bebidas"></div>
+            </div>
+        </section>
+
+        <!-- DESSERTS -->
+        <section class="menu-section" id="section-sobremesas" data-section="sobremesas">
+            <div class="page-wrap">
+                <div class="section-hd">
+                    <h2 class="section-title">Sobremesas</h2>
+                    <p class="section-desc">O final perfeito para fechar com chave de ouro</p>
+                </div>
+                <div class="grid grid--wide" id="grid-sobremesas"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- INFO STRIP -->
+    <section class="info-strip" aria-label="Informações do restaurante">
+        <div class="info-content page-wrap">
+            <div class="info-item">
+                <i class="fa-solid fa-clock info-icon" aria-hidden="true"></i>
+                <p class="info-label">Horário</p>
+                <p class="info-val">Quarta a Segunda<br>18h às 23h</p>
+            </div>
+            <div class="info-sep" aria-hidden="true"></div>
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot info-icon" aria-hidden="true"></i>
+                <p class="info-label">Endereço</p>
+                <p class="info-val">Pedro Nicolau Isensee<br>Coloninha, Gaspar — SC</p>
+            </div>
+            <div class="info-sep" aria-hidden="true"></div>
+            <div class="info-item">
+                <i class="fa-brands fa-whatsapp info-icon" aria-hidden="true"></i>
+                <p class="info-label">Pedidos</p>
+                <a href="https://wa.me/5547988095244" target="_blank" rel="noopener noreferrer" class="btn-wa">
+                    (47) 9 8809-5244
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] flex items-center justify-center hidden" id="cart-modal">
-     
-        <div class="bg-white p-6 rounded-2xl min-w-[90%] md:min-w-[600px] max-w-2xl max-h-[85vh] overflow-y-auto">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">Meu carrinho</h2>
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
 
-                <div id="cart-items" class="mb-6"></div>
-                
-                <div class="bg-gray-50 p-4 rounded-lg mb-6">
-                    <p class="text-lg font-semibold text-gray-900">Total: <span id="cart-total" class="text-red">R$ 0,00</span></p>
-                </div>
-
-                <label class="block text-sm font-semibold text-gray-900 mb-2">Endereço de entrega</label>
-                <input type="text" 
-                placeholder="Digite seu endereço completo..."
-                id="address"
-                class="w-full border-2 border-gray-200 p-3 rounded-lg mb-2 text-gray-900">
-                <p class="text-red text-sm font-semibold hidden mb-4" id="address-warn">O endereço não pode ser vazio!</p>
-      
-                <div class="flex items-center justify-between gap-4">
-                    <button id="close-modal-btn" class="flex-1 px-6 py-3 border-2 border-gray-200 rounded-lg font-semibold text-gray-900">Fechar</button>
-                    <button id="checkout-btn" onclick="sendOrder()" class="flex-1 bg-green text-white px-6 py-3 rounded-lg font-semibold">Finalizar Pedido</button>
-                </div>
-            
+    <!-- CART PANEL -->
+    <aside class="cart-panel" id="cart-panel" role="dialog" aria-modal="true" aria-label="Seu pedido">
+        <div class="cp-header">
+            <h2 class="cp-title">Seu Pedido</h2>
+            <button class="cp-close" id="cp-close" aria-label="Fechar carrinho">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="cp-body" id="cp-body">
+            <div class="cp-empty" id="cp-empty">
+                <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+                <p>Carrinho vazio</p>
+                <span>Adicione itens do cardápio</span>
             </div>
-    </div>
+            <div class="cp-items" id="cp-items"></div>
+        </div>
+        <div class="cp-footer">
+            <div class="cp-addr-wrap">
+                <label class="cp-addr-label" for="address-input">Endereço de entrega</label>
+                <input
+                    type="text"
+                    id="address-input"
+                    class="cp-addr-input"
+                    placeholder="Rua, número, bairro..."
+                    autocomplete="street-address"
+                >
+            </div>
+            <div class="cp-total-row">
+                <span>Total do pedido</span>
+                <strong id="cp-total">R$ 0,00</strong>
+            </div>
+            <button class="btn-checkout" id="btn-checkout">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                Finalizar pelo WhatsApp
+            </button>
+        </div>
+    </aside>
 
-    <footer class="w-full bg-red py-4 fixed bottom-0 z-40 flex items-center justify-center">
-        <button
-        class="flex items-center gap-3 text-white font-semibold"
-        id="cart-btn"
-        >
-        <span id="cart-count" class="text-red">0</span>
-        Veja meu carrinho
-            <i class="fa fa-cart-plus text-lg"></i>
+    <!-- FIXED FOOTER -->
+    <footer class="site-footer">
+        <span class="footer-hours">
+            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            Qua - Seg · 18h às 23h
+        </span>
+        <button class="btn-open-cart" id="btn-open-cart" aria-label="Ver meu pedido">
+            <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+            <span>Ver Pedido</span>
+            <span class="cart-count" id="cart-count" aria-live="polite" data-empty="true">0</span>
         </button>
     </footer>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="script.js"></script>
+    <!-- TOASTS -->
+    <div class="toast-stack" id="toast-stack" role="status" aria-live="polite"></div>
 
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,210 +1,372 @@
-const menu = document.getElementById("menu");
-const cartBtn = document.getElementById("cart-btn");
-const cartModal = document.getElementById("cart-modal");
-const cartItemsContainer = document.getElementById("cart-items");
-const cartTotal = document.getElementById("cart-total");
-const checkoutBtn = document.getElementById("checkout-btn");
-const closeModalBtn = document.getElementById("close-modal-btn");
-const cartCounter = document.getElementById("cart-count");
-const addressInput = document.getElementById("address");
-const addressWarn = document.getElementById("address-warn");
+'use strict';
 
+// ============================================================
+// MENU DATA
+// ============================================================
+const MENU = {
+  burgers: [
+    {
+      id: 1,
+      name: 'Smash Burger Clássico',
+      desc: 'Pão artesanal, burger smash 160g, queijo americano, maionese especial da casa',
+      price: 18.90,
+      img: 'assets/hamburguer-smash.png'
+    },
+    {
+      id: 2,
+      name: 'Double Smash',
+      desc: 'Pão artesanal, 2x burger smash 160g, queijo duplo, alface, molho especial',
+      price: 32.90,
+      img: 'assets/hamburguer-duplo.png'
+    },
+    {
+      id: 3,
+      name: 'Verde & Fresco',
+      desc: 'Burger 160g, queijo, alface crocante, tomate fresco, cebola roxa, mostarda dijon',
+      price: 35.90,
+      img: 'assets/hamburguer-salada.png'
+    },
+    {
+      id: 4,
+      name: 'Bacon Crispy',
+      desc: 'Burger 160g, bacon artesanal crocante, cheddar, cebola crocante, molho defumado',
+      price: 28.90,
+      img: 'assets/hamburguer-bacon.png'
+    },
+    {
+      id: 5,
+      name: 'Da Casa',
+      desc: 'Receita exclusiva da casa, burger 160g, bacon, cebola caramelizada, queijo especial',
+      price: 30.00,
+      img: 'assets/hamburguer-da-casa.png'
+    }
+  ],
+  bebidas: [
+    {
+      id: 6,
+      name: 'Coca-Cola Lata',
+      desc: 'Lata 350ml, bem gelada',
+      price: 6.00,
+      img: 'assets/coca-cola.png'
+    },
+    {
+      id: 7,
+      name: 'Guaraná Antarctica',
+      desc: 'Lata 350ml, bem gelada',
+      price: 6.00,
+      img: 'assets/guarana.png'
+    },
+    {
+      id: 8,
+      name: 'Água Mineral',
+      desc: 'Garrafa 500ml, sem gás',
+      price: 4.00,
+      img: 'assets/agua.jpeg'
+    },
+  ],
+  sobremesas: [
+    {
+      id: 15,
+      name: 'Brownie com Sorvete',
+      desc: 'Brownie de chocolate belga quente, bola de sorvete de creme, calda de chocolate',
+      price: 18.00,
+      img: 'assets/brownie.jpeg'
+    },
+    {
+      id: 16,
+      name: 'Pudim de Leite',
+      desc: 'Pudim caseiro de leite condensado com calda de caramelo artesanal',
+      price: 12.00,
+      img: 'assets/pudim.jpg'
+    },
+    {
+      id: 17,
+      name: 'Petit Gateau',
+      desc: 'Bolo de chocolate com coração quente derretido, sorvete de creme',
+      price: 22.00,
+      img: 'assets/petit-gateau.webp'
+    },
+    {
+      id: 18,
+      name: 'Açaí 500ml',
+      desc: 'Açaí cremoso da Amazônia, banana, granola artesanal, leite condensado',
+      price: 16.00,
+      img: 'assets/acai.webp'
+    }
+  ]
+};
+
+// ============================================================
+// CART STATE
+// ============================================================
 let cart = [];
 
-let cartlength = cart.length;
-
-cartBtn.addEventListener("click", () => {
-    updateCartModel();
-    cartModal.style.display = "flex";
-})
-
-cartModal.addEventListener("click", (event) => {
-    if (event.target === cartModal) {
-        cartModal.style.display = "none";
-    }
-})
-
-closeModalBtn.addEventListener("click", () => {
-    cartModal.style.display = "none";
-})
-
-menu.addEventListener("click", (event) => {
-    let parentButton = event.target.closest("button[data-name]");
-
-    if (parentButton) {
-        const name = parentButton.getAttribute("data-name");
-        const price = parseFloat(parentButton.getAttribute("data-price"));
-
-        addToCart(name, price);
-    }
-});
-
-
-function addToCart(name, price) {
-    const existingItem = cart.find(item => item.name === name)
-
-    if (existingItem) {
-        existingItem.quantity += 1
-
-    } else {
-        cart.push({
-            name,
-            price,
-            quantity: 1
-        })
-    }
-    updateCartModel()
-
-    Toastify({
-        text: "Produto adicionado ao carrinho!",
-        duration: 3000,
-        close: true,
-        gravity: "top",
-        position: "center",
-        stopOnFocus: true,
-        style: {
-          background: "#10B981",
-          borderRadius: "8px",
-          fontWeight: "600",
-          padding: "12px 20px",
-        },
-      }).showToast();
+function brl(n) {
+  return n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-function updateCartModel() {
-    cartItemsContainer.innerHTML = "";
-    let total = 0;
+function findItem(id) {
+  return Object.values(MENU).flat().find(i => i.id === id) || null;
+}
 
-
-    cart.forEach(item => {
-        const cartItemElement = document.createElement("div");
-        cartItemElement.classList.add("cart-item");
-
-        cartItemElement.innerHTML =
-            `
-     <div class="flex items-center justify-between">
-         <div>
-            <p class="font-semibold text-gray-900">${item.name}</p>
-            <p class="text-sm text-gray-600 mt-1">Qtd: ${item.quantity}</p>
-            <p class="font-bold mt-1 text-red">R$ ${item.price.toFixed(2)}</p>
-         </div> 
-         <div>
-            <button class="remove-from-cart-btn bg-red text-white px-4 py-2 rounded-lg font-semibold text-sm" data-name="${item.name}">
-                Remover
+// ============================================================
+// RENDER MENU
+// ============================================================
+function renderMenus() {
+  Object.entries(MENU).forEach(([cat, items]) => {
+    const grid = document.getElementById(`grid-${cat}`);
+    if (!grid) return;
+    items.forEach((item, i) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.style.transitionDelay = `${i * 0.055}s`;
+      card.innerHTML = `
+        <div class="card-img">
+          <img src="${item.img}" alt="${item.name}" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">${item.name}</h3>
+          <p class="card-desc">${item.desc}</p>
+          <div class="card-foot">
+            <p class="card-price"><sup>R$</sup>${item.price.toFixed(2).replace('.', ',')}</p>
+            <button class="btn-add" data-id="${item.id}" aria-label="Adicionar ${item.name}">
+              <i class="fa-solid fa-plus" aria-hidden="true"></i> Adicionar
             </button>
-         </div>
-     </div>  
-     `;
-
-        total += item.price * item.quantity;
-
-        cartItemsContainer.appendChild(cartItemElement);
-    })
-
-    cartTotal.textContent = total.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
     });
-
-    cartCounter.innerHTML = cart.length
+  });
 }
 
-
-cartItemsContainer.addEventListener("click", function (event) {
-    if (event.target.classList.contains("remove-from-cart-btn")) {
-        const name = event.target.getAttribute("data-name");
-
-        removeItemCart(name);
-    }
-})
-
-function removeItemCart(name) {
-    const index = cart.findIndex(item => item.name === name);
-
-    if (index !== -1) {
-        const item = cart[index];
-
-        if (item.quantity > 1) {
-            item.quantity -= 1;
-            updateCartModel();
-            return;
-        }
-        cart.splice(index, 1);
-        updateCartModel();
-    }
+// ============================================================
+// CART LOGIC
+// ============================================================
+function addToCart(id) {
+  const item = findItem(id);
+  if (!item) return;
+  const existing = cart.find(c => c.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ ...item, qty: 1 });
+  }
+  syncCart();
+  showToast(`${item.name} adicionado!`, 'success');
+  bumpCartBtn();
 }
 
-function getAddress() {
-    return addressInput.value;
+function changeQty(id, delta) {
+  const idx = cart.findIndex(i => i.id === id);
+  if (idx === -1) return;
+  cart[idx].qty += delta;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
+  syncCart();
 }
-addressInput.addEventListener("input", (event) => {
-    let inputValue = event.target.value;
-    if (inputValue !== "") {
-        addressInput.classList.remove("border-red")
-        addressWarn.classList.add("hidden");
-    }
+
+function syncCart() {
+  const count = cart.reduce((s, i) => s + i.qty, 0);
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+
+  const badge = document.getElementById('cart-count');
+  badge.textContent = count;
+  badge.dataset.empty = count === 0 ? 'true' : 'false';
+
+  document.getElementById('cp-total').textContent = brl(total);
+
+  const empty = document.getElementById('cp-empty');
+  const list  = document.getElementById('cp-items');
+
+  if (cart.length === 0) {
+    empty.style.display = 'flex';
+    list.innerHTML = '';
+  } else {
+    empty.style.display = 'none';
+    list.innerHTML = cart.map(item => `
+      <div class="cp-item">
+        <img src="${item.img}" alt="${item.name}" class="cp-item-img">
+        <div class="cp-item-info">
+          <p class="cp-item-name">${item.name}</p>
+          <p class="cp-item-price">${brl(item.price * item.qty)}</p>
+        </div>
+        <div class="cp-item-qty">
+          <button class="qty-btn" onclick="changeQty(${item.id}, -1)" aria-label="Remover um">-</button>
+          <span class="qty-val">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${item.id}, 1)" aria-label="Adicionar um">+</button>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+function bumpCartBtn() {
+  const btn = document.getElementById('btn-open-cart');
+  btn.style.transform = 'scale(1.07) translateY(-2px)';
+  setTimeout(() => { btn.style.transform = ''; }, 200);
+}
+
+// ============================================================
+// CART PANEL
+// ============================================================
+function openCart() {
+  document.getElementById('cart-panel').classList.add('open');
+  document.getElementById('cart-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  document.getElementById('cart-panel').classList.remove('open');
+  document.getElementById('cart-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ============================================================
+// CHECKOUT (WhatsApp)
+// ============================================================
+function checkout() {
+  if (cart.length === 0) {
+    showToast('Adicione itens ao pedido', 'warn');
+    return;
+  }
+
+  const addr = document.getElementById('address-input').value.trim();
+  if (!addr) {
+    showToast('Informe o endereço de entrega', 'warn');
+    document.getElementById('address-input').focus();
+    return;
+  }
+
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+
+  let msg = '*Moveio Burguer - Novo Pedido*\n\n';
+  cart.forEach(i => {
+    msg += `- ${i.qty}x ${i.name} — ${brl(i.price * i.qty)}\n`;
+  });
+  msg += `\n*Total: ${brl(total)}*`;
+  msg += `\n\n*Endereço de entrega:*\n${addr}`;
+
+  window.open(`https://wa.me/5547988095244?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// ============================================================
+// RESTAURANT STATUS
+// ============================================================
+function updateStatus() {
+  const dot   = document.getElementById('status-dot');
+  const label = document.getElementById('status-label');
+  const now   = new Date();
+  const day   = now.getDay();
+  const mins  = now.getHours() * 60 + now.getMinutes();
+  const open  = 18 * 60;
+  const close = 23 * 60;
+
+  const isOpen = day !== 2 && mins >= open && mins < close;
+
+  if (isOpen) {
+    dot.classList.remove('closed');
+    label.textContent = 'Aberto';
+  } else {
+    dot.classList.add('closed');
+    label.textContent = day === 2 ? 'Fechado' : 'Fechado';
+  }
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+function showToast(msg, type) {
+  const stack = document.getElementById('toast-stack');
+  const el = document.createElement('div');
+  el.className = `toast ${type || 'success'}`;
+  const icon = type === 'warn'
+    ? 'fa-triangle-exclamation'
+    : 'fa-circle-check';
+  el.innerHTML = `<i class="fa-solid ${icon}" aria-hidden="true"></i> ${msg}`;
+  stack.appendChild(el);
+  setTimeout(() => {
+    el.classList.add('exiting');
+    el.addEventListener('animationend', () => el.remove(), { once: true });
+  }, 2700);
+}
+
+// ============================================================
+// CATEGORY NAV SCROLLSPY
+// ============================================================
+function initCatNav() {
+  const OFFSET = 64 + 52 + 20;
+  const btns = document.querySelectorAll('.cat-btn');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const el = document.getElementById(btn.dataset.target);
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - OFFSET;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sec = entry.target.dataset.section;
+        btns.forEach(b =>
+          b.classList.toggle('active', b.dataset.target === `section-${sec}`)
+        );
+      }
+    });
+  }, { rootMargin: `-${64 + 52}px 0px -45% 0px` });
+
+  document.querySelectorAll('.menu-section[data-section]').forEach(s =>
+    observer.observe(s)
+  );
+}
+
+// ============================================================
+// CARD REVEAL ANIMATIONS
+// ============================================================
+function initReveal() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.07 });
+
+  document.querySelectorAll('.card').forEach(c => observer.observe(c));
+}
+
+// ============================================================
+// ADD TO CART — event delegation on main
+// ============================================================
+function initAddButtons() {
+  document.getElementById('cardapio').addEventListener('click', e => {
+    const btn = e.target.closest('.btn-add');
+    if (!btn) return;
+    e.stopPropagation();
+    addToCart(parseInt(btn.dataset.id, 10));
+  });
+}
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  renderMenus();
+  syncCart();
+  updateStatus();
+  initCatNav();
+  initReveal();
+  initAddButtons();
+
+  document.getElementById('btn-open-cart').addEventListener('click', openCart);
+  document.getElementById('cp-close').addEventListener('click', closeCart);
+  document.getElementById('cart-overlay').addEventListener('click', closeCart);
+  document.getElementById('btn-checkout').addEventListener('click', checkout);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeCart();
+  });
 });
-
-function sendOrder() {
-    const isOpen = checkRestaurantOpen();
-    const address = getAddress();
-    
-    if (cart.length === 0) return;
-
-    if (isOpen) {
-        if (address !== "") {
-            const cartItems = cart.map((item) => {
-                return `${item.quantity}x ${item.name}`;
-            }).join("\n");
-
-            const totalPrice = cart.reduce((acc, item) => {
-                return acc + (item.price * item.quantity);
-            }, 0);
-
-            const message = encodeURIComponent(`${cartItems}
-
-Local: ${address}\nPreço Total: R$ ${totalPrice.toFixed(2)}
-`);
-
-            const phone = "47988095244";
-
-            window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
-        } else {
-            addressWarn.classList.remove("hidden");
-            addressInput.classList.add("border-red");
-        }
-    } else {
-        Toastify({
-            text: "Ops o restaurante está fechado!",
-            duration: 3000,
-            close: true,
-            gravity: "top", 
-            position: "right", 
-            stopOnFocus: true,
-            style: {
-                background: "#EF4444",
-                borderRadius: "8px",
-                fontWeight: "600",
-                padding: "12px 20px",
-            },
-        }).showToast();
-    }
-}
-
-function checkRestaurantOpen() {
-    const data = new Date();
-    const hora = data.getHours();
-    return hora >= 12 && hora <= 22;
-}
-
-const spanItem = document.getElementById('date-span');
-const isOpen = checkRestaurantOpen();
-
-if (isOpen) {
-    spanItem.classList.add('bg-green');
-    spanItem.classList.remove('bg-red');
-} else {
-    spanItem.classList.add('bg-red');
-    spanItem.classList.remove('bg-green');
-}
-
