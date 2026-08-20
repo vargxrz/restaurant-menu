@@ -1,0 +1,219 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - generic [ref=f6e3]:
+      - link "Moveio Burguer":
+        - /url: "#hero"
+      - generic [ref=f6e4]: Fechado
+  - generic [ref=f6e9]:
+    - paragraph [ref=f6e10]: Gaspar, SC
+    - heading [level=1] [ref=f6e11]:
+      - text: Sabor que
+      - emphasis [ref=f6e12]: marca.
+    - paragraph [ref=f6e13]: Smash burgers artesanais com ingredientes frescos, feitos com cuidado.
+    - link "Ver cardápio " [ref=f6e15] [cursor=pointer]:
+      - /url: "#cardapio"
+      - text: Ver cardápio
+      - generic [ref=f6e16]: 
+  - generic [ref=f6e19]:
+    - generic [ref=f6e20]: Smash Burgers Artesanais
+    - generic [ref=f6e22]: Feito Na Hora
+    - generic [ref=f6e24]: Ingredientes Frescos
+    - generic [ref=f6e26]: Moveio Burguer
+    - generic [ref=f6e28]: Smash Burgers Artesanais
+    - generic [ref=f6e30]: Feito Na Hora
+    - generic [ref=f6e32]: Ingredientes Frescos
+    - generic [ref=f6e34]: Moveio Burguer
+  - navigation "Seções do cardápio" [ref=f6e36]:
+    - generic [ref=f6e37]:
+      - button "Hambúrgueres" [ref=f6e38] [cursor=pointer]
+      - button "Bebidas" [ref=f6e39] [cursor=pointer]
+      - button "Sobremesas" [ref=f6e40] [cursor=pointer]
+  - main [ref=f6e41]:
+    - generic [ref=f6e43]:
+      - generic [ref=f6e44]:
+        - heading "Hambúrgueres" [level=2] [ref=f6e45]
+        - paragraph [ref=f6e46]: Pão artesanal / burger 160g / ingredientes premium
+      - generic [ref=f6e47]:
+        - generic [ref=f6e48]:
+          - img "Smash Burger Clássico" [ref=f6e50]
+          - generic [ref=f6e51]:
+            - heading "Smash Burger Clássico" [level=3] [ref=f6e52]
+            - generic [ref=f6e53]:
+              - paragraph [ref=f6e54]:
+                - superscript [ref=f6e55]: R$
+                - text: 18,90
+              - button "Adicionar Smash Burger Clássico" [ref=f6e56] [cursor=pointer]:
+                - generic [ref=f6e57]: +
+                - text: Adicionar
+        - generic [ref=f6e58]:
+          - img "Double Smash" [ref=f6e60]
+          - generic [ref=f6e61]:
+            - heading "Double Smash" [level=3] [ref=f6e62]
+            - generic [ref=f6e63]:
+              - paragraph [ref=f6e64]:
+                - superscript [ref=f6e65]: R$
+                - text: 32,90
+              - button "Adicionar Double Smash" [ref=f6e66] [cursor=pointer]:
+                - generic [ref=f6e67]: +
+                - text: Adicionar
+        - generic [ref=f6e68]:
+          - img "Verde & Fresco" [ref=f6e70]
+          - generic [ref=f6e71]:
+            - heading "Verde & Fresco" [level=3] [ref=f6e72]
+            - generic [ref=f6e73]:
+              - paragraph [ref=f6e74]:
+                - superscript [ref=f6e75]: R$
+                - text: 35,90
+              - button "Adicionar Verde & Fresco" [ref=f6e76] [cursor=pointer]:
+                - generic [ref=f6e77]: +
+                - text: Adicionar
+        - generic [ref=f6e78]:
+          - img "Bacon Crispy" [ref=f6e80]
+          - generic [ref=f6e81]:
+            - heading "Bacon Crispy" [level=3] [ref=f6e82]
+            - generic [ref=f6e83]:
+              - paragraph [ref=f6e84]:
+                - superscript [ref=f6e85]: R$
+                - text: 28,90
+              - button "Adicionar Bacon Crispy" [ref=f6e86] [cursor=pointer]:
+                - generic [ref=f6e87]: +
+                - text: Adicionar
+        - generic [ref=f6e88]:
+          - img "Da Casa" [ref=f6e90]
+          - generic [ref=f6e91]:
+            - heading "Da Casa" [level=3] [ref=f6e92]
+            - generic [ref=f6e93]:
+              - paragraph [ref=f6e94]:
+                - superscript [ref=f6e95]: R$
+                - text: 30,00
+              - button "Adicionar Da Casa" [ref=f6e96] [cursor=pointer]:
+                - generic [ref=f6e97]: +
+                - text: Adicionar
+    - generic [ref=f6e99]:
+      - generic [ref=f6e100]:
+        - heading "Bebidas" [level=2] [ref=f6e101]
+        - paragraph [ref=f6e102]: Refrigerantes, sucos e milkshakes bem gelados
+      - generic [ref=f6e103]:
+        - generic [ref=f6e104]:
+          - img "Coca-Cola Lata" [ref=f6e106]
+          - generic [ref=f6e107]:
+            - heading "Coca-Cola Lata" [level=3] [ref=f6e108]
+            - generic [ref=f6e109]:
+              - paragraph [ref=f6e110]:
+                - superscript [ref=f6e111]: R$
+                - text: 6,00
+              - button "Adicionar Coca-Cola Lata" [ref=f6e112] [cursor=pointer]:
+                - generic [ref=f6e113]: +
+                - text: Adicionar
+        - generic [ref=f6e114]:
+          - img "Guaraná Antarctica" [ref=f6e116]
+          - generic [ref=f6e117]:
+            - heading "Guaraná Antarctica" [level=3] [ref=f6e118]
+            - generic [ref=f6e119]:
+              - paragraph [ref=f6e120]:
+                - superscript [ref=f6e121]: R$
+                - text: 6,00
+              - button "Adicionar Guaraná Antarctica" [ref=f6e122] [cursor=pointer]:
+                - generic [ref=f6e123]: +
+                - text: Adicionar
+        - generic [ref=f6e124]:
+          - img "Água Mineral" [ref=f6e126]
+          - generic [ref=f6e127]:
+            - heading "Água Mineral" [level=3] [ref=f6e128]
+            - generic [ref=f6e129]:
+              - paragraph [ref=f6e130]:
+                - superscript [ref=f6e131]: R$
+                - text: 4,00
+              - button "Adicionar Água Mineral" [ref=f6e132] [cursor=pointer]:
+                - generic [ref=f6e133]: +
+                - text: Adicionar
+    - generic [ref=f6e135]:
+      - generic [ref=f6e136]:
+        - heading "Sobremesas" [level=2] [ref=f6e137]
+        - paragraph [ref=f6e138]: O final perfeito para fechar em grande estilo
+      - generic [ref=f6e139]:
+        - generic [ref=f6e140]:
+          - img "Brownie com Sorvete" [ref=f6e142]
+          - generic [ref=f6e143]:
+            - heading "Brownie com Sorvete" [level=3] [ref=f6e144]
+            - generic [ref=f6e145]:
+              - paragraph [ref=f6e146]:
+                - superscript [ref=f6e147]: R$
+                - text: 18,00
+              - button "Adicionar Brownie com Sorvete" [ref=f6e148] [cursor=pointer]:
+                - generic [ref=f6e149]: +
+                - text: Adicionar
+        - generic [ref=f6e150]:
+          - img "Pudim de Leite" [ref=f6e152]
+          - generic [ref=f6e153]:
+            - heading "Pudim de Leite" [level=3] [ref=f6e154]
+            - generic [ref=f6e155]:
+              - paragraph [ref=f6e156]:
+                - superscript [ref=f6e157]: R$
+                - text: 12,00
+              - button "Adicionar Pudim de Leite" [ref=f6e158] [cursor=pointer]:
+                - generic [ref=f6e159]: +
+                - text: Adicionar
+        - generic [ref=f6e160]:
+          - img "Petit Gateau" [ref=f6e162]
+          - generic [ref=f6e163]:
+            - heading "Petit Gateau" [level=3] [ref=f6e164]
+            - generic [ref=f6e165]:
+              - paragraph [ref=f6e166]:
+                - superscript [ref=f6e167]: R$
+                - text: 22,00
+              - button "Adicionar Petit Gateau" [ref=f6e168] [cursor=pointer]:
+                - generic [ref=f6e169]: +
+                - text: Adicionar
+        - generic [ref=f6e170]:
+          - img "Açaí 500ml" [ref=f6e172]
+          - generic [ref=f6e173]:
+            - heading "Açaí 500ml" [level=3] [ref=f6e174]
+            - generic [ref=f6e175]:
+              - paragraph [ref=f6e176]:
+                - superscript [ref=f6e177]: R$
+                - text: 16,00
+              - button "Adicionar Açaí 500ml" [ref=f6e178] [cursor=pointer]:
+                - generic [ref=f6e179]: +
+                - text: Adicionar
+  - region "Informações do restaurante" [ref=f6e180]:
+    - generic [ref=f6e181]:
+      - generic [ref=f6e182]:
+        - generic [ref=f6e183]: 
+        - paragraph [ref=f6e184]: Horário
+        - paragraph [ref=f6e185]: Quarta a Segunda18h às 23h
+      - generic [ref=f6e187]:
+        - generic [ref=f6e188]: 
+        - paragraph [ref=f6e189]: Endereço
+        - paragraph [ref=f6e190]: Pedro Nicolau IsenseeColoninha, Gaspar / SC
+      - generic [ref=f6e192]:
+        - generic [ref=f6e193]: 
+        - paragraph [ref=f6e194]: Pedidos
+        - link "(47) 9 8809-5244" [ref=f6e195] [cursor=pointer]:
+          - /url: https://wa.me/5547988095244
+  - dialog "Seu pedido" [ref=f6e196]:
+    - generic [ref=f6e197]:
+      - heading "Seu Pedido" [level=2] [ref=f6e198]
+      - button "Fechar carrinho" [ref=f6e199] [cursor=pointer]:
+        - generic [ref=f6e200]: 
+    - generic [ref=f6e202]:
+      - generic [ref=f6e203]: 
+      - paragraph [ref=f6e204]: Carrinho vazio
+      - generic [ref=f6e205]: Adicione itens do cardápio
+    - generic [ref=f6e206]:
+      - generic [ref=f6e207]:
+        - generic [ref=f6e208]: Endereço de entrega
+        - textbox "Endereço de entrega" [ref=f6e209]:
+          - /placeholder: Rua, número, bairro...
+      - generic [ref=f6e210]:
+        - generic [ref=f6e211]: Total do pedido
+        - strong [ref=f6e212]: R$ 0,00
+      - button "Finalizar pelo WhatsApp" [ref=f6e213] [cursor=pointer]:
+        - generic [ref=f6e214]: 
+        - text: Finalizar pelo WhatsApp
+  - contentinfo [ref=f6e215]:
+    - text: 
+    - button "Ver meu pedido" [ref=f6e216] [cursor=pointer]:
+      - generic [ref=f6e217]: 
+      - generic [ref=f6e218]: Ver Pedido
+  - status

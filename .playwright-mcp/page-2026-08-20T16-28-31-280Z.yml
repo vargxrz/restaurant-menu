@@ -1,0 +1,236 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - link "Moveio Burguer" [ref=f3e4] [cursor=pointer]:
+        - /url: "#hero"
+        - generic [ref=f3e5]:
+          - generic [ref=f3e6]: Moveio
+          - generic [ref=f3e7]: Coloninha, Gaspar SC
+      - generic [ref=f3e8]: Fechado
+  - generic [ref=f3e13]:
+    - paragraph [ref=f3e14]: Gaspar, SC
+    - heading [level=1] [ref=f3e15]:
+      - text: Sabor que
+      - emphasis [ref=f3e16]: marca.
+    - paragraph [ref=f3e17]: Smash burgers artesanais com ingredientes frescos, feitos com cuidado.
+    - link "Ver cardápio " [ref=f3e19] [cursor=pointer]:
+      - /url: "#cardapio"
+      - text: Ver cardápio
+      - generic [ref=f3e20]: 
+  - generic [ref=f3e23]:
+    - generic [ref=f3e24]: Smash Burgers Artesanais
+    - generic [ref=f3e26]: Feito Na Hora
+    - generic [ref=f3e28]: Ingredientes Frescos
+    - generic [ref=f3e30]: Moveio Burguer
+    - generic [ref=f3e32]: Smash Burgers Artesanais
+    - generic [ref=f3e34]: Feito Na Hora
+    - generic [ref=f3e36]: Ingredientes Frescos
+    - generic [ref=f3e38]: Moveio Burguer
+  - navigation "Seções do cardápio" [ref=f3e40]:
+    - generic [ref=f3e41]:
+      - button "Hambúrgueres" [ref=f3e42] [cursor=pointer]
+      - button "Bebidas" [ref=f3e43] [cursor=pointer]
+      - button "Sobremesas" [ref=f3e44] [cursor=pointer]
+  - main [ref=f3e45]:
+    - generic [ref=f3e47]:
+      - generic [ref=f3e48]:
+        - heading "Hambúrgueres" [level=2] [ref=f3e49]
+        - paragraph [ref=f3e50]: Pão artesanal / burger 160g / ingredientes premium
+      - generic [ref=f3e51]:
+        - generic [ref=f3e52]:
+          - img "Smash Burger Clássico" [ref=f3e54]
+          - generic [ref=f3e55]:
+            - heading "Smash Burger Clássico" [level=3] [ref=f3e56]
+            - paragraph [ref=f3e57]: Pão artesanal, burger smash 160g, queijo americano, maionese especial da casa
+            - generic [ref=f3e58]:
+              - paragraph [ref=f3e59]:
+                - superscript [ref=f3e60]: R$
+                - text: 18,90
+              - button "Adicionar Smash Burger Clássico" [ref=f3e61] [cursor=pointer]:
+                - generic [ref=f3e62]: +
+                - text: Adicionar
+        - generic [ref=f3e63]:
+          - img "Double Smash" [ref=f3e65]
+          - generic [ref=f3e66]:
+            - heading "Double Smash" [level=3] [ref=f3e67]
+            - paragraph [ref=f3e68]: Pão artesanal, 2x burger smash 160g, queijo duplo, alface, molho especial
+            - generic [ref=f3e69]:
+              - paragraph [ref=f3e70]:
+                - superscript [ref=f3e71]: R$
+                - text: 32,90
+              - button "Adicionar Double Smash" [ref=f3e72] [cursor=pointer]:
+                - generic [ref=f3e73]: +
+                - text: Adicionar
+        - generic [ref=f3e74]:
+          - img "Verde & Fresco" [ref=f3e76]
+          - generic [ref=f3e77]:
+            - heading "Verde & Fresco" [level=3] [ref=f3e78]
+            - paragraph [ref=f3e79]: Burger 160g, queijo, alface crocante, tomate fresco, cebola roxa, mostarda dijon
+            - generic [ref=f3e80]:
+              - paragraph [ref=f3e81]:
+                - superscript [ref=f3e82]: R$
+                - text: 35,90
+              - button "Adicionar Verde & Fresco" [ref=f3e83] [cursor=pointer]:
+                - generic [ref=f3e84]: +
+                - text: Adicionar
+        - generic [ref=f3e85]:
+          - img "Bacon Crispy" [ref=f3e87]
+          - generic [ref=f3e88]:
+            - heading "Bacon Crispy" [level=3] [ref=f3e89]
+            - paragraph [ref=f3e90]: Burger 160g, bacon artesanal crocante, cheddar, cebola crocante, molho defumado
+            - generic [ref=f3e91]:
+              - paragraph [ref=f3e92]:
+                - superscript [ref=f3e93]: R$
+                - text: 28,90
+              - button "Adicionar Bacon Crispy" [ref=f3e94] [cursor=pointer]:
+                - generic [ref=f3e95]: +
+                - text: Adicionar
+        - generic [ref=f3e96]:
+          - img "Da Casa" [ref=f3e98]
+          - generic [ref=f3e99]:
+            - heading "Da Casa" [level=3] [ref=f3e100]
+            - paragraph [ref=f3e101]: Receita exclusiva da casa, burger 160g, bacon, cebola caramelizada, queijo especial
+            - generic [ref=f3e102]:
+              - paragraph [ref=f3e103]:
+                - superscript [ref=f3e104]: R$
+                - text: 30,00
+              - button "Adicionar Da Casa" [ref=f3e105] [cursor=pointer]:
+                - generic [ref=f3e106]: +
+                - text: Adicionar
+    - generic [ref=f3e108]:
+      - generic [ref=f3e109]:
+        - heading "Bebidas" [level=2] [ref=f3e110]
+        - paragraph [ref=f3e111]: Refrigerantes, sucos e milkshakes bem gelados
+      - generic [ref=f3e112]:
+        - generic [ref=f3e113]:
+          - img "Coca-Cola Lata" [ref=f3e115]
+          - generic [ref=f3e116]:
+            - heading "Coca-Cola Lata" [level=3] [ref=f3e117]
+            - paragraph [ref=f3e118]: Lata 350ml, bem gelada
+            - generic [ref=f3e119]:
+              - paragraph [ref=f3e120]:
+                - superscript [ref=f3e121]: R$
+                - text: 6,00
+              - button "Adicionar Coca-Cola Lata" [ref=f3e122] [cursor=pointer]:
+                - generic [ref=f3e123]: +
+                - text: Adicionar
+        - generic [ref=f3e124]:
+          - img "Guaraná Antarctica" [ref=f3e126]
+          - generic [ref=f3e127]:
+            - heading "Guaraná Antarctica" [level=3] [ref=f3e128]
+            - paragraph [ref=f3e129]: Lata 350ml, bem gelada
+            - generic [ref=f3e130]:
+              - paragraph [ref=f3e131]:
+                - superscript [ref=f3e132]: R$
+                - text: 6,00
+              - button "Adicionar Guaraná Antarctica" [ref=f3e133] [cursor=pointer]:
+                - generic [ref=f3e134]: +
+                - text: Adicionar
+        - generic [ref=f3e135]:
+          - img "Água Mineral" [ref=f3e137]
+          - generic [ref=f3e138]:
+            - heading "Água Mineral" [level=3] [ref=f3e139]
+            - paragraph [ref=f3e140]: Garrafa 500ml, sem gás
+            - generic [ref=f3e141]:
+              - paragraph [ref=f3e142]:
+                - superscript [ref=f3e143]: R$
+                - text: 4,00
+              - button "Adicionar Água Mineral" [ref=f3e144] [cursor=pointer]:
+                - generic [ref=f3e145]: +
+                - text: Adicionar
+    - generic [ref=f3e147]:
+      - generic [ref=f3e148]:
+        - heading "Sobremesas" [level=2] [ref=f3e149]
+        - paragraph [ref=f3e150]: O final perfeito para fechar em grande estilo
+      - generic [ref=f3e151]:
+        - generic [ref=f3e152]:
+          - img "Brownie com Sorvete" [ref=f3e154]
+          - generic [ref=f3e155]:
+            - heading "Brownie com Sorvete" [level=3] [ref=f3e156]
+            - paragraph [ref=f3e157]: Brownie de chocolate belga quente, bola de sorvete de creme, calda de chocolate
+            - generic [ref=f3e158]:
+              - paragraph [ref=f3e159]:
+                - superscript [ref=f3e160]: R$
+                - text: 18,00
+              - button "Adicionar Brownie com Sorvete" [ref=f3e161] [cursor=pointer]:
+                - generic [ref=f3e162]: +
+                - text: Adicionar
+        - generic [ref=f3e163]:
+          - img "Pudim de Leite" [ref=f3e165]
+          - generic [ref=f3e166]:
+            - heading "Pudim de Leite" [level=3] [ref=f3e167]
+            - paragraph [ref=f3e168]: Pudim caseiro de leite condensado com calda de caramelo artesanal
+            - generic [ref=f3e169]:
+              - paragraph [ref=f3e170]:
+                - superscript [ref=f3e171]: R$
+                - text: 12,00
+              - button "Adicionar Pudim de Leite" [ref=f3e172] [cursor=pointer]:
+                - generic [ref=f3e173]: +
+                - text: Adicionar
+        - generic [ref=f3e174]:
+          - img "Petit Gateau" [ref=f3e176]
+          - generic [ref=f3e177]:
+            - heading "Petit Gateau" [level=3] [ref=f3e178]
+            - paragraph [ref=f3e179]: Bolo de chocolate com coração quente derretido, sorvete de creme
+            - generic [ref=f3e180]:
+              - paragraph [ref=f3e181]:
+                - superscript [ref=f3e182]: R$
+                - text: 22,00
+              - button "Adicionar Petit Gateau" [ref=f3e183] [cursor=pointer]:
+                - generic [ref=f3e184]: +
+                - text: Adicionar
+        - generic [ref=f3e185]:
+          - img "Açaí 500ml" [ref=f3e187]
+          - generic [ref=f3e188]:
+            - heading "Açaí 500ml" [level=3] [ref=f3e189]
+            - paragraph [ref=f3e190]: Açaí cremoso da Amazônia, banana, granola artesanal, leite condensado
+            - generic [ref=f3e191]:
+              - paragraph [ref=f3e192]:
+                - superscript [ref=f3e193]: R$
+                - text: 16,00
+              - button "Adicionar Açaí 500ml" [ref=f3e194] [cursor=pointer]:
+                - generic [ref=f3e195]: +
+                - text: Adicionar
+  - region "Informações do restaurante" [ref=f3e196]:
+    - generic [ref=f3e197]:
+      - generic [ref=f3e198]:
+        - generic [ref=f3e199]: 
+        - paragraph [ref=f3e200]: Horário
+        - paragraph [ref=f3e201]: Quarta a Segunda18h às 23h
+      - generic [ref=f3e203]:
+        - generic [ref=f3e204]: 
+        - paragraph [ref=f3e205]: Endereço
+        - paragraph [ref=f3e206]: Pedro Nicolau IsenseeColoninha, Gaspar / SC
+      - generic [ref=f3e208]:
+        - generic [ref=f3e209]: 
+        - paragraph [ref=f3e210]: Pedidos
+        - link "(47) 9 8809-5244" [ref=f3e211] [cursor=pointer]:
+          - /url: https://wa.me/5547988095244
+  - dialog "Seu pedido" [ref=f3e212]:
+    - generic [ref=f3e213]:
+      - heading "Seu Pedido" [level=2] [ref=f3e214]
+      - button "Fechar carrinho" [ref=f3e215] [cursor=pointer]:
+        - generic [ref=f3e216]: 
+    - generic [ref=f3e218]:
+      - generic [ref=f3e219]: 
+      - paragraph [ref=f3e220]: Carrinho vazio
+      - generic [ref=f3e221]: Adicione itens do cardápio
+    - generic [ref=f3e222]:
+      - generic [ref=f3e223]:
+        - generic [ref=f3e224]: Endereço de entrega
+        - textbox "Endereço de entrega" [ref=f3e225]:
+          - /placeholder: Rua, número, bairro...
+      - generic [ref=f3e226]:
+        - generic [ref=f3e227]: Total do pedido
+        - strong [ref=f3e228]: R$ 0,00
+      - button "Finalizar pelo WhatsApp" [ref=f3e229] [cursor=pointer]:
+        - generic [ref=f3e230]: 
+        - text: Finalizar pelo WhatsApp
+  - contentinfo [ref=f3e231]:
+    - generic [ref=f3e232]:
+      - generic [ref=f3e233]: 
+      - text: Qua a Seg / 18h às 23h
+    - button "Ver meu pedido" [ref=f3e234] [cursor=pointer]:
+      - generic [ref=f3e235]: 
+      - generic [ref=f3e236]: Ver Pedido
+  - status

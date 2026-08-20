@@ -241,7 +241,7 @@ function checkout() {
 
   let msg = '*Moveio Burguer - Novo Pedido*\n\n';
   cart.forEach(i => {
-    msg += `- ${i.qty}x ${i.name} — ${brl(i.price * i.qty)}\n`;
+    msg += `- ${i.qty}x ${i.name} / ${brl(i.price * i.qty)}\n`;
   });
   msg += `\n*Total: ${brl(total)}*`;
   msg += `\n\n*Endereço de entrega:*\n${addr}`;
@@ -353,6 +353,13 @@ function initAddButtons() {
 // ============================================================
 // INIT
 // ============================================================
+function initHeader() {
+  const header = document.getElementById('site-header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderMenus();
   syncCart();
@@ -360,6 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCatNav();
   initReveal();
   initAddButtons();
+  initHeader();
 
   document.getElementById('btn-open-cart').addEventListener('click', openCart);
   document.getElementById('cp-close').addEventListener('click', closeCart);
